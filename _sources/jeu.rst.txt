@@ -1,0 +1,7 @@
+jeu module
+==========
+
+.. automodule:: jeu
+   :members:
+   :undoc-members:
+   :show-inheritance:

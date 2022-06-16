@@ -1,0 +1,7 @@
+chess module
+============
+
+.. automodule:: chess
+   :members:
+   :undoc-members:
+   :show-inheritance:
