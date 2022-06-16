@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>board module &#8212; PyChessProject2022 16/06/2022 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="jeu module" href="jeu.html" />
+    <link rel="prev" title="Welcome to PyChessProject2022’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="jeu.html" title="jeu module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to PyChessProject2022’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyChessProject2022 16/06/2022 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">board module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-board">
+<span id="board-module"></span><h1>board module<a class="headerlink" href="#module-board" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="board.Board">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">board.</span></span><span class="sig-name descname"><span class="pre">Board</span></span><a class="headerlink" href="#board.Board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.board_display">
+<span class="sig-name descname"><span class="pre">board_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.board_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the board using the pygame library
+This method will read through the whole chessboard line by line displaying the right image on the right position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colour</strong> – String value used to display an overlay showing whose turn it is</p></li>
+<li><p><strong>screen</strong> – Pygame display on witch we want to display the board</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.copy_board">
+<span class="sig-name descname"><span class="pre">copy_board</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chess</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.copy_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will copy on board into an other</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Array positional argument used to locate the piece.</p>
+</dd>
+</dl>
+<p>:rtype : None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement">
+<span class="sig-name descname"><span class="pre">deplacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments and make the move if it is legitimate for its type.
+The starting position piece type is predetermined and only the appropriate move method will be applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement_cavalier">
+<span class="sig-name descname"><span class="pre">deplacement_cavalier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement_cavalier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments</p>
+<blockquote>
+<div><p>and make the move if it is legitimate for a knight.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement_dame">
+<span class="sig-name descname"><span class="pre">deplacement_dame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement_dame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments and make the move if it is legitimate for a queen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement_fou">
+<span class="sig-name descname"><span class="pre">deplacement_fou</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement_fou" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments and make the move if it is legitimate for a bishop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement_pion">
+<span class="sig-name descname"><span class="pre">deplacement_pion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement_pion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments
+and make the move if it is legitimate for a pawn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement_roi">
+<span class="sig-name descname"><span class="pre">deplacement_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement_roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments</p>
+<blockquote>
+<div><p>and make the move if it is legitimate for a king.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.deplacement_tour">
+<span class="sig-name descname"><span class="pre">deplacement_tour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.deplacement_tour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a piece move
+This method will take two starting and two ending  positional arguments and make the move if it is legitimate for a tower.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is done, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.get_king_positional_arguments">
+<span class="sig-name descname"><span class="pre">get_king_positional_arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colour</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.get_king_positional_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get either a B or W king positional arguments
+This method will read through the whole chessboard line by line until the element met is a King of the
+requested colour.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>colour</strong> – String value used to check if the piece colour attribute matches it.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing both positional arguments of the requested king.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="board.Board.index_range">
+<span class="sig-name descname"><span class="pre">index_range</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7]</span></em><a class="headerlink" href="#board.Board.index_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.ischeck">
+<span class="sig-name descname"><span class="pre">ischeck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colour</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.ischeck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return either True or False depending on the check status
+This method will try to move all the piece on the king position to see if the kink is check</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>colour</strong> – String to choose the color who need to be check if it’s check</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True when the team of the argument color is in check, false otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.ischeck_mate">
+<span class="sig-name descname"><span class="pre">ischeck_mate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_turn_board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.ischeck_mate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return either True or False depending on the checkmate status
+This method will try to move all the piece and test is the king is still check</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>colour</strong> – String to choose the color who need to be check if it’s checkmate</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True of False depending on the state of the board</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement">
+<span class="sig-name descname"><span class="pre">isdeplacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate
+This method will take two starting and two ending  positional arguments and verify if the move is legitimate for its type.
+The starting position piece type is predetermined and only the appropriate move verification method will be applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement_cavalier">
+<span class="sig-name descname"><span class="pre">isdeplacement_cavalier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement_cavalier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate for a bishop
+This method will take two starting and two ending  positional arguments and verify if the move is legitimate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement_dame">
+<span class="sig-name descname"><span class="pre">isdeplacement_dame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement_dame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate for a Queen
+This method checks if the move is either a Bishop or a tower one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement_fou">
+<span class="sig-name descname"><span class="pre">isdeplacement_fou</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement_fou" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate for a Bishop
+This method will take two starting and two ending  positional arguments and verify if the move is a legitimate bishop move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement_pion">
+<span class="sig-name descname"><span class="pre">isdeplacement_pion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement_pion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate for a pawn
+This method will take two starting and two ending  positional arguments and verify if the move is legitimate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement_roi">
+<span class="sig-name descname"><span class="pre">isdeplacement_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement_roi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate for a king
+This method will take two starting and two ending  positional arguments and verify if the move is legitimate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isdeplacement_tour">
+<span class="sig-name descname"><span class="pre">isdeplacement_tour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isdeplacement_tour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if a move is legitimate for a tower
+This method will take two starting and two ending  positional arguments</p>
+<blockquote>
+<div><p>and verify if the move is legitimate for a tower.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is legitimate, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="board.Board.isinrange">
+<span class="sig-name descname"><span class="pre">isinrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#board.Board.isinrange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if the selected position is on the bord
+This method will take two starting and two ending  positional arguments and verify if the move finish on the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>y</strong> – Array positional argument used to locate the piece.</p></li>
+<li><p><strong>new_x</strong> – Array positional argument used to locate the piece ending position.</p></li>
+<li><p><strong>new_y</strong> – Array positional argument used to locate the piece ending position.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value of 1 when a movement is on the board, a boolean value of 0 otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Welcome to PyChessProject2022’s documentation!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="jeu.html"
+                          title="next chapter">jeu module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/board.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="jeu.html" title="jeu module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to PyChessProject2022’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyChessProject2022 16/06/2022 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">board module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Benameur Dumont.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
